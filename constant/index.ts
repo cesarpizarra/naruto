@@ -1,6 +1,25 @@
 import { FaTiktok, FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 
+export const navlinks = [
+  {
+    name: "Characters",
+    url: "/characters",
+  },
+  {
+    name: "Akatsuki",
+    url: "/akatsuki",
+  },
+  {
+    name: "Tailed Beasts",
+    url: "/tailed-beasts",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+];
+
 export const footerSocials = [
   {
     name: "facebook",

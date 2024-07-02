@@ -1,16 +1,25 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
+import Link from "next/link";
+import { navlinks } from "@/constant";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
   return (
-    <div className="w-full bg-darkPrimary px-5 py-7 lg:px-0">
+    <div className="sticky top-0 z-40 w-full bg-darkPrimary px-5 py-7 lg:px-0">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between">
-        <div>
+        <Link href="/" className="cursor-pointer">
           <Image
             src="/logo.png"
             alt="Logo"
@@ -18,25 +27,18 @@ const Header = () => {
             height="100"
             style={{ width: "auto", height: "auto" }}
           />
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden items-center gap-4 text-white lg:flex">
-          <li className="flex items-center gap-2">
-            <input
-              placeholder="Search Character..."
-              className="cursor-pointer rounded-lg border-2 border-[#3e3e3e] bg-[#292929] px-6 py-2 text-base text-white transition hover:border-[#fff]"
-              type="text"
-            />
-
-            <button className="rounded-lg bg-primary px-3 py-2">Search</button>
-          </li>
-          <li className="cursor-pointer duration-100 hover:text-primary">
-            About
-          </li>
-          <div className="cursor-pointer">
-            <FaGithub size={25} />
-          </div>
+          {navlinks.map((link, i) => (
+            <li
+              key={i}
+              className="cursor-pointer duration-100 hover:text-primary"
+            >
+              {link.name} |
+            </li>
+          ))}
         </ul>
 
         {/* Hamburger Icon */}
@@ -46,14 +48,15 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <ul className="absolute left-0 right-0 top-40 flex h-full flex-col items-center gap-4 bg-darkPrimary px-4 py-5 text-white md:hidden">
-            <li className="bg-darkSecondary w-full cursor-pointer py-4 text-center hover:text-primary">
-              About
-            </li>
-
-            <div className="cursor-pointer">
-              <FaGithub size={25} />
-            </div>
+          <ul className="fixed left-0 right-0 top-24 z-50 flex h-full flex-col items-center gap-4 bg-darkPrimary px-4 py-5 text-white md:hidden">
+            {navlinks.map((link, i) => (
+              <li
+                key={i}
+                className="w-full cursor-pointer bg-darkSecondary py-4 text-center hover:text-primary"
+              >
+                {link.name}
+              </li>
+            ))}
           </ul>
         )}
       </div>

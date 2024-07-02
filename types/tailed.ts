@@ -1,4 +1,4 @@
-export type Character = {
+export type Tailed = {
   id: string;
   name: string;
   images: string[];
@@ -10,17 +10,14 @@ export type Character = {
   voiceActors: string[];
   personal: {
     titles: string[];
-    clan: any;
-    classification: any;
+    classification?: any;
   };
 };
 
-export type CharacterCardProps = {
+export type TailedCardProps = {
   image: string;
   name: string;
   personal: {
-    titles: string[];
-    clan?: any;
-    classification: any;
+    classification?: any;
   };
 };

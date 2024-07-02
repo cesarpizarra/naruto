@@ -23,7 +23,7 @@ const Footer = () => {
             2024 Naruto
           </h3>
 
-          <h3 className="inline-flex items-center gap-2">
+          <h3 className="inline-flex items-center gap-2 py-4">
             Created with <RiNextjsFill size={25} /> by{" "}
             <Link href="https://cpizarra.vercel.app/">
               <span className="text-emerald-500 hover:underline">
