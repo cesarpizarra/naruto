@@ -17,11 +17,11 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-3 p-5 text-white lg:items-start">
-          <h1 className="font-naruto text-4xl font-bold text-primary">
+          <h1 className="font-naruto text-2xl font-bold text-primary md:text-4xl">
             Naruto Shippuden
           </h1>
 
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-lg font-semibold md:text-xl">
             Explore the World of Naruto Characters
           </h2>
 

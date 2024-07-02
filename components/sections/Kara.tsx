@@ -26,7 +26,7 @@ const Kara = () => {
 
   return (
     <section className="min-h-screen w-full bg-darkPrimary p-5">
-      <div>
+      <div className="mx-auto max-w-6xl">
         <h1 className="text-4xl font-bold text-primary">Kara</h1>
         {loading ? (
           <Loading />

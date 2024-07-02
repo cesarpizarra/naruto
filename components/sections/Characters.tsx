@@ -25,8 +25,8 @@ const Characters = () => {
   }, []);
 
   return (
-    <section className="min-h-screen w-full bg-darkPrimary p-5">
-      <div>
+    <section className="in-h-screen w-full bg-darkPrimary p-5">
+      <div className="mx-auto max-w-6xl">
         <h1 className="text-4xl font-bold text-primary">Characters</h1>
         {loading ? (
           <Loading />
