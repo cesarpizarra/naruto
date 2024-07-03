@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ image, name, id }) => {
   return (
-    <div className="group rounded-md bg-darkSecondary">
-      <div className="h-64 overflow-hidden transition-all group-hover:rotate-3 group-hover:scale-105">
+    <div className="rounded-md bg-darkSecondary transition-all hover:rotate-3 hover:scale-105">
+      <div className="h-64 overflow-hidden">
         <Image
           src={image}
           alt={name}

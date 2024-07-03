@@ -116,11 +116,11 @@ const CharacterId = ({
         {/* Jutsu */}
         <div className="py-8">
           {details.jutsu && details.jutsu?.length > 0 && (
-            <h1 className="text-lg text-primary">Justu</h1>
+            <h1 className="text-lg text-primary">Jutsu</h1>
           )}
           <ul className="grid list-disc px-5 md:grid-cols-3">
             {details.jutsu?.map((jutsu, index) => (
-              <li key={index} className="text-secondary text-sm">
+              <li key={index} className="text-sm text-secondary">
                 {jutsu}
               </li>
             ))}
@@ -134,7 +134,7 @@ const CharacterId = ({
           )}
           <ul className="grid list-disc px-5 md:grid-cols-3">
             {details.tools?.map((tools, index) => (
-              <li key={index} className="text-secondary text-sm">
+              <li key={index} className="text-sm text-secondary">
                 {tools}
               </li>
             ))}
