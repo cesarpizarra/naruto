@@ -1,17 +1,17 @@
 "use client";
-import { getAllAkatsuki } from "@/services/character";
+import CharacterCard from "@/components/cards/CharacterCard";
+import Loading from "@/components/common/loading";
+import { getAllCharacters } from "@/services/character";
 import { Character } from "@/types/character";
 import React, { useEffect, useState } from "react";
-import CharacterCard from "../cards/CharacterCard";
-import Loading from "../common/loading";
 
-const Akatsuki = () => {
+const Characters = () => {
   const [data, setData] = useState<Character[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const fetchData = async () => {
+  const fetchCharacters = async () => {
     try {
-      const response = await getAllAkatsuki();
+      const response = await getAllCharacters();
       setData(response);
       setLoading(false);
     } catch (error) {
@@ -21,18 +21,18 @@ const Akatsuki = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchCharacters();
   }, []);
 
   return (
-    <section className="min-h-screen w-full bg-darkPrimary p-5">
+    <section className="in-h-screen w-full bg-darkPrimary p-5">
       <div className="mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold text-primary">Akatsuki</h1>
+        <h1 className="text-4xl font-bold text-primary">Characters</h1>
         {loading ? (
           <Loading />
         ) : (
           <div className="grid grid-cols-2 gap-5 py-4 md:grid-cols-4 lg:grid-cols-6">
-            {data.slice(0, 12).map(
+            {data.map(
               (char) =>
                 char.images.length > 0 && (
                   <CharacterCard
@@ -55,4 +55,4 @@ const Akatsuki = () => {
   );
 };
 
-export default Akatsuki;
+export default Characters;

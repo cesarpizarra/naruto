@@ -1,47 +1,27 @@
 import { CharacterCardProps } from "@/types/character";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
-const CharacterCard: React.FC<CharacterCardProps> = ({
-  image,
-  name,
-  personal,
-}) => {
+const CharacterCard: React.FC<CharacterCardProps> = ({ image, name, id }) => {
   return (
-    <div className="rounded-md bg-darkSecondary">
-      <div className="h-64 overflow-hidden">
+    <div className="group rounded-md bg-darkSecondary">
+      <div className="h-64 overflow-hidden transition-all group-hover:rotate-3 group-hover:scale-105">
         <Image
           src={image}
           alt={name}
           width={500}
           height={50}
-          className="h-full w-full rounded-t-md object-cover object-center"
+          className="h-full w-full rounded-md object-cover object-center"
         />
       </div>
       <div className="px-4 py-2">
-        <h2 className="title-font mt-5 text-lg font-medium text-white">
+        <Link
+          href={`${name}/${id}`}
+          className="title-font mt-5 cursor-pointer text-lg font-medium text-primary underline"
+        >
           {name}
-        </h2>
-        {personal && (
-          <p className="mt-2 text-xs leading-relaxed text-white md:text-sm">
-            {personal.clan}
-          </p>
-        )}
-
-        <a className="mt-3 inline-flex cursor-pointer items-center text-primary underline">
-          Read More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="ml-2 h-4 w-4"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

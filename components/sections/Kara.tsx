@@ -37,6 +37,7 @@ const Kara = () => {
                 char.images.length > 0 && (
                   <CharacterCard
                     key={char.id}
+                    id={char.id.toString()}
                     image={char.images[0]}
                     name={char.name}
                     personal={{

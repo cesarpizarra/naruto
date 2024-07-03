@@ -8,10 +8,12 @@ const Footer = () => {
     <footer className="bg-darkSecondary p-5">
       <div className="flex flex-col items-center justify-center text-white">
         <h2 className="text-center">
-          Find an issue with this page?{" "}
-          <span className="cursor-pointer text-primary hover:underline">
-            Fix it on Github
-          </span>
+          Want to contribute? Find an issue with this page?{" "}
+          <Link href="https://github.com/cesarpizarra/naruto/issues">
+            <span className="cursor-pointer text-primary hover:underline">
+              Fix it on GitHub
+            </span>
+          </Link>
         </h2>
 
         <div className="flex flex-col items-center py-4">

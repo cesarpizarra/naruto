@@ -38,6 +38,7 @@ const Characters = () => {
                   <CharacterCard
                     key={char.id}
                     image={char.images[0]}
+                    id={char.id.toString()}
                     name={char.name}
                     personal={{
                       titles: char.personal.titles,

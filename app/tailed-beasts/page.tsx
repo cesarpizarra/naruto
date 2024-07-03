@@ -1,9 +1,9 @@
 "use client";
+import CharacterCard from "@/components/cards/CharacterCard";
+import Loading from "@/components/common/loading";
 import { getAllTailed } from "@/services/tailed";
 import { Tailed } from "@/types/tailed";
 import React, { useEffect, useState } from "react";
-import CharacterCard from "../cards/CharacterCard";
-import Loading from "../common/loading";
 
 const TailedBeasts = () => {
   const [data, setData] = useState<Tailed[]>([]);
@@ -31,7 +31,7 @@ const TailedBeasts = () => {
           <Loading />
         ) : (
           <div className="grid grid-cols-2 gap-5 py-4 md:grid-cols-4 lg:grid-cols-6">
-            {data.slice(0, 12).map(
+            {data.map(
               (tail) =>
                 tail.images.length > 0 && (
                   <CharacterCard

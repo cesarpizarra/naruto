@@ -31,3 +31,13 @@ export const getAllKara = async (): Promise<Character[]> => {
     throw new Error("Failed to fetch kara");
   }
 };
+
+export const getCharacterById = async (id: any) => {
+  try {
+    const response = await axios.get(`${API_URL}/characters/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("API Error:", error);
+    throw new Error("Failed to fetch character by id");
+  }
+};
