@@ -63,7 +63,9 @@ const About = () => {
         </div>
 
         <div className="text-center text-white">
-          <h2 className="mb-4 text-2xl font-semibold">About the Developer</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-primary">
+            About the Developer
+          </h2>
           <p>
             I am a dedicated developer with a passion for anime and web
             development. Creating this website has been a labor of love,
@@ -75,7 +77,7 @@ const About = () => {
         </div>
 
         <div className="mt-12 text-center text-white">
-          <h2 className="mb-4 text-2xl font-semibold">Contact</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-primary">Contact</h2>
           <p>
             If you have any questions, feedback, or suggestions, feel free to
             reach out!

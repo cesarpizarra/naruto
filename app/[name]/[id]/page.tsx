@@ -19,8 +19,10 @@ const CharacterId = ({
   const fetchDataId = async () => {
     try {
       const response = await getCharacterById(params.id);
-      setDetails(response);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+        setDetails(response);
+      }, 1500);
     } catch (error) {
       console.error(error);
       setIsLoading(false);

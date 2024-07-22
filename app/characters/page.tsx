@@ -12,8 +12,10 @@ const Characters = () => {
   const fetchCharacters = async () => {
     try {
       const response = await getAllCharacters();
-      setData(response);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+        setData(response);
+      }, 1500);
     } catch (error) {
       console.error(error);
       setLoading(false);

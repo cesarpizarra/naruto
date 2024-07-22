@@ -11,8 +11,10 @@ const TailedBeasts = () => {
   const fetchData = async () => {
     try {
       const response = await getAllTailed();
-      setData(response);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+        setData(response);
+      }, 1500);
     } catch (error) {
       console.error(error);
       setLoading(false);
